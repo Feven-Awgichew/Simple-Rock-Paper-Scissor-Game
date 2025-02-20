@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rock Paper Scissors</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div class="navbar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="help.html">Help</a></li>
+      
+        </ul>
+    </div>
+  <section class="container" id="gameArea">
+    <!-- Result display section -->
+    <div class="score">
+        <div class="playerScore">
+            <h2>Player</h2>
+            <p class="p-count count">0</p>
+        </div>       
+        <div class="computerScore">
+            <h2>Computer</h2>
+            <p class="c-count count">0</p>
+        </div>
+    </div>
+
+    <div class="result_field">
+        <!-- Container for user and BOT result images -->
+        <div class="result_images">
+            <span class="user_result">
+                <img src="images/rockn.png" alt="User's choice image" />
+            </span>
+            <span class="bot_result">
+                <img src="images/rockn.png" alt="BOT's choice image" />
+            </span>
+        </div>
+        <!-- Display the game result message -->
+        <div class="result">Let's Play!</div>
+        
+    </div>
+  
+    <!-- Options for user to choose from -->
+    <div class="option_images">
+        <span class="option_image">
+            <img src="images/rocknew.png" alt="Rock image" />
+            <p>Rock</p>
+        </span>
+        <span class="option_image">
+            <img src="images/papernew.png" alt="Paper image" />
+            <p>Paper</p>
+        </span>
+        <span class="option_image">
+            <img src="images/scissorsnew.png" alt="Scissors image" />
+            <p>Scissors</p>
+        </span>
+    </div>
+    <button class="reset-button" style="display: none;">Reset Game</button>
+    <audio id="cheerAudio" src="cheer1.mp3"></audio>
+    <audio id="loseAudio" src="lose1.mp3"></audio>
+    
+    
+ </section>
+   
+
+  <script src="script.js" defer></script>
+</body>
+</html>

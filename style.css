@@ -1,0 +1,279 @@
+/* Import Google font - Audiowide */
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Audiowide", sans-serif;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  padding: 15px;
+  align-items: center;
+  justify-content: center;
+  background: #cbd6e2;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  max-width: 700px;
+  width: 100%;
+  padding: 2rem 5rem;
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: 0 5px 10px rgba(45, 44, 44, 0.1);
+}
+
+.result_images {
+  display: flex;
+  gap: 7rem;
+  justify-content: center;
+}
+
+.container.start .user_result {
+  transform-origin: left;
+  animation: userShake 0.7s ease infinite;
+}
+
+@keyframes userShake {
+  50% {
+    transform: rotate(10deg);
+  }
+}
+
+.container.start .bot_result {
+  transform-origin: right;
+  animation: botShake 0.7s ease infinite;
+}
+
+@keyframes botShake {
+  50% {
+    transform: rotate(-10deg);
+  }
+}
+
+.result_images img {
+  width: 100px;
+}
+
+.user_result img {
+  transform: rotate(90deg);
+}
+
+.bot_result img {
+  transform: rotate(-90deg) rotateY(180deg);
+}
+
+.result {
+  text-align: center;
+  font-size: 2rem;
+  color: #4a52e6;
+  margin: 1.5rem 0;
+}
+
+.option_image img {
+  width: 50px;
+}
+.score
+{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+  padding: 10px 20px;
+
+}
+
+.playerScore {
+  text-align: center;
+  /*background-color: #e0e7ff; /* Light background */
+  /*border: 2px solid #7d2ae8; /* Border color */
+  border-radius: 10px;
+  padding: 10px;
+  width: 160px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.computerScore{
+  text-align: center;
+  /*background-color: #e0e7ff; /* Light background */
+ /* border: 2px solid #7d2ae8; /* Border color */
+  border-radius: 10px;
+  padding: 10px;
+  width: 160px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-left: auto; 
+}
+/* Score titles */
+.playerScore h2, .computerScore h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  color:#4a52e6; /* Title color */
+}
+
+/* Score counts */
+.count {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #4a4a4a; /* Count color */
+}
+
+
+/* Moves left display */
+.movesleft {
+  font-size: 1.2rem;
+  margin-top: 10px;
+  text-align: center;
+  color: #4a4a4a; /* Moves left color */
+}
+/* Reset button styles */
+.reset-button {
+  display: none; /* Initially hidden */
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #6168ed; /* Green background */
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background-color 0.3s ease;
+}
+
+/* Reset button hover effect */
+.reset-button:hover {
+  background-color: #4a52e6; /* Darker green on hover */
+}
+
+
+
+.option_images {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  margin-top: 2.5rem;
+  justify-content: space-evenly;
+}
+
+.container.start .option_images {
+  pointer-events: none;
+}
+
+.option_image {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0.5;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.option_image:hover {
+  opacity: 1;
+}
+
+.option_image.active {
+  opacity: 1;
+}
+
+.option_image img {
+  pointer-events: none;
+}
+
+.option_image p {
+  color: #4a52e6;
+  font-size: 1.235rem;
+  margin-top: 1rem;
+  pointer-events: none;
+}
+
+@keyframes pop {
+  0% {
+    transform: translateX(-50%) scale(0);
+    opacity: 1;
+  }
+  50% {
+    transform: translateX(-50%) scale(1.2);
+  }
+  100% {
+    transform: translateX(-50%) scale(0);
+    opacity: 0;
+  }
+}
+
+
+/* Responsive media query code for small devices */
+@media (max-width: 500px) {
+  .option_images {
+    justify-content: space-between;
+  }
+
+  .option_image img {
+    width: 40px;
+  }
+}
+
+
+.navbar {
+  position: fixed;
+  top: 10px; /* Distance from the top */
+  right: 20px; /* Distance from the right */
+  background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+  border-radius: 5px; /* Rounded corners */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Shadow effect */
+  z-index: 1000; /* Ensure it's above other content */
+}
+
+.navbar ul {
+  list-style-type: none; /* Remove bullet points */
+  margin: 0; /* Remove default margin */
+  padding: 10px; /* Padding inside the navbar */
+  display: flex; /* Flexbox for horizontal alignment */
+}
+
+.navbar li {
+  margin-left: 15px; /* Space between links */
+}
+
+.navbar a {
+  text-decoration: none; /* Remove underline */
+  color: #333; /* Text color */
+  font-weight: bold; /* Bold text */
+}
+
+.navbar a:hover {
+  color: #4a52e6; /* Change color on hover */
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px; /* Space between icons */
+
+}
+
+.social-icons a {
+  color: #333; /* Icon color */
+  font-size: 24px; /* Icon size */
+  text-decoration: none; /* Remove underline */
+}
+
+.social-icons a:hover {
+  color: #4a52e6; /* Change color on hover */
+}
+
+
+@keyframes fall {
+  from {
+      transform: translateY(-100%);
+      opacity: 1;
+  }
+  to {
+      transform: translateY(0);
+      opacity: 0;
+  }
+}
+

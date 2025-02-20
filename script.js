@@ -29,9 +29,9 @@ let botScore = 0;
 let maxMoves = 5;
 let currentMoves = 0;
 
-// Get the cheering audio element
+// Get the cheering and losingvaudio element
 const cheerAudio = new Audio('cheer1.mp3'); // Make sure the path is correct
-const loseAudio = new Audio('lose1.mp3');
+const loseAudio = new Audio('lose1.mp3');// Make sure the path is correct
 
 
 // Update scores in the display
@@ -43,16 +43,16 @@ function updateScores() {
 
 // Display final result
 function displayFinalResult() {
-  if (playerScore > botScore) {
+  if (playerScore > botScore) 
+  {
     result.textContent = "Game Over! You WIN!";
     cheerAudio.play(); // Play cheering sound if the player wins
-      
-   
-   
-  } else if (botScore > playerScore) {
+  } 
+  else if (botScore > playerScore) {
     result.textContent = "Game Over! BOT WINS!";
     loseAudio.play();
-  } else {
+  } 
+  else {
     result.textContent = "Game Over! It's a DRAW!";
   }
   
